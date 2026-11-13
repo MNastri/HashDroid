@@ -29,13 +29,13 @@ jobs:
       - name: Install Android platform
         run: sdkmanager "platforms;android-${ANDROID_COMPILE_SDK}"
 
-      - name: Set up Gradle
+      - name: Install Gradle
         uses: gradle/actions/setup-gradle@v6
+        with:
+          gradle-version: '8.10.2'
 
       - name: Build APK
-        run: |
-          chmod +x ./gradlew
-          ./gradlew --no-daemon assembleDebug
+        run: gradle assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
