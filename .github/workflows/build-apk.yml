@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      ANDROID_COMPILE_SDK: 35
+      ANDROID_COMPILE_SDK: 28
 
     steps:
       - name: Checkout repository
